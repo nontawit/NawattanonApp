@@ -1,14 +1,15 @@
 <mat-toolbar color="primary">
- <div fxShow fxHide.gt-xs>
-    <!-- Logo on the far light --> 
-    <img src="favicon.ico" alt="Logo" height="30">
- </div>
- <!-- Spancer to push menus to the right -->
- <span class="example-spacer">Nawattanon Engineering</span>
+    <button mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
 
- <!-- Menus on the far right -->
- <button mat-button>Home</button>
- <button mat-button>About</button>
- <button mat-button>Contact</button>
- <!-- Add more buttons as needed -->
+    <span class="brand">Nawattanon Engineering</span>
+
+    <div class="spacer"></div>
+
+    <div class="nav-link" *ngIf="showMenu">
+        <a mat-button>Home</a>
+        <a mat-button>About</a>
+        <a mat-button>Contact</a>
+    </div>
 </mat-toolbar>

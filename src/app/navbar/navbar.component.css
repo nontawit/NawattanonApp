@@ -1,13 +1,18 @@
-.mat-toolbar{
-    background-color: cornflowerblue;
-    color: white;
+.brand{
+    font-size: 1.5rem;
 }
 
-.mat-button{
-    color: white;
+.nav-link{
+    display: flex;
+    gap: 1rem;
 }
 
-.example-spacer{
+.spacer{
     flex: 1 1 auto;
-    padding-left: .5cm;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-link{
+        display: none;
+    }
 }
