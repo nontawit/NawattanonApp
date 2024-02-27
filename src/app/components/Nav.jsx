@@ -6,7 +6,7 @@ function Nav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return(
-        <nav className=" bg-gray-800">
+        <div className=" bg-gray-800">
             <div className=" container mx-auto px-4">
                 <div className=" flex justify-between items-center h-16">
                     <Link className=" text-white font-bold text-xl" href="/">
@@ -67,7 +67,7 @@ function Nav() {
                     </div>
                 </div>
             )}
-        </nav>
+        </div>
     );
 };
 
