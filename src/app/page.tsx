@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import image1 from "./images/image1.jpg";
 import { useEffect, useState } from "react";
 
 export default function Home() {
