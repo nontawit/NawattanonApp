@@ -31,8 +31,6 @@ export default function Home() {
           width={500}
           height={500}
         />
-      </div>
-      
       <button 
         onClick={prevImage} 
         className="bg-gray-500 text-white p-2 rounded-full absolute left-4 top-1/2 transform -translate-y-1/2">
@@ -44,6 +42,10 @@ export default function Home() {
       >
         <FaChevronRight size={20}/>
       </button>
+
+      </div>
+      
+      
     </div>
   );
 }
