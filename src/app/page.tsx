@@ -23,29 +23,32 @@ export default function Home() {
   };
 
   return (
-    <div className=" flex items-center justify-center h-screen">
-      <div className=" relative w-500 h-500">
-          <Image 
+    <div className=" grid place-items-center min-h-screen relative">
+      <div className="relative  w-400 h-600">
+        <Image 
           src={`/images/image${currentImage}.jpg`} 
           alt={`Image $ {currentImage}`} 
-          width={500}
-          height={500}
+          layout="intrinsic"
+          objectFit="cover"
+          objectPosition="center center"
+          width={350}
+          height={550}
         />
+      
+      </div>
       <button 
         onClick={prevImage} 
-        className="bg-gray-500 text-white p-2 rounded-full absolute left-4 top-1/2 transform -translate-y-1/2">
+        className="bg-gray-500 text-white p-2 rounded-full absolute left-20 top-1/2 transform -translate-y-1/2">
         <FaChevronLeft size={20}/>
       </button>
       <button 
         onClick={nextImage}
-        className="bg-gray-500 text-white p-2 rounded-full absolute right-4 top-1/2 transform -translate-y-1/2"
+        className="bg-gray-500 text-white p-2 rounded-full absolute right-20 top-1/2 transform -translate-y-1/2"
       >
         <FaChevronRight size={20}/>
       </button>
 
-      </div>
-      
       
     </div>
   );
-}
+};
