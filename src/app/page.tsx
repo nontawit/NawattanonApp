@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(1);
@@ -22,18 +23,26 @@ export default function Home() {
   };
 
   return (
-    <div className=" flex items-center justify-center h-auto w-full ">
-      <button onClick={prevImage}>
-        Previous
+    <div className=" flex items-center justify-center h-screen">
+      <div className=" relative w-500 h-500">
+          <Image 
+          src={`/images/image${currentImage}.jpg`} 
+          alt={`Image $ {currentImage}`} 
+          width={500}
+          height={500}
+        />
+      </div>
+      
+      <button 
+        onClick={prevImage} 
+        className="bg-gray-500 text-white p-2 rounded-full absolute left-4 top-1/2 transform -translate-y-1/2">
+        <FaChevronLeft size={20}/>
       </button>
-      <Image 
-        src={`/images/image${currentImage}.jpg`} 
-        alt={`Image $ {currentImage}`} 
-        height={500}
-        width={500}
-      />
-      <button onClick={nextImage}>
-        Next
+      <button 
+        onClick={nextImage}
+        className="bg-gray-500 text-white p-2 rounded-full absolute right-4 top-1/2 transform -translate-y-1/2"
+      >
+        <FaChevronRight size={20}/>
       </button>
     </div>
   );
