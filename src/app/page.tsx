@@ -38,12 +38,12 @@ export default function Home() {
       </div>
       <button 
         onClick={prevImage} 
-        className="bg-gray-500 text-white p-2 rounded-full absolute left-20 top-1/2 transform -translate-y-1/2">
+        className="bg-gray-500 text-white p-2 rounded-full absolute left-4 top-1/2 transform -translate-y-1/2">
         <FaChevronLeft size={20}/>
       </button>
       <button 
         onClick={nextImage}
-        className="bg-gray-500 text-white p-2 rounded-full absolute right-20 top-1/2 transform -translate-y-1/2"
+        className="bg-gray-500 text-white p-2 rounded-full absolute right-4 top-1/2 transform -translate-y-1/2"
       >
         <FaChevronRight size={20}/>
       </button>
