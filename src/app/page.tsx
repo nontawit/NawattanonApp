@@ -1,54 +1,24 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Carousel from "@/components/Carousel";
+import React from "react";
 
-export default function Home() {
-  const [currentImage, setCurrentImage] = useState(1);
-  const totalImage = 5;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage % totalImage) + 1);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextImage = () => {
-    setCurrentImage((prevImage) => (prevImage % totalImage) + 1);
-  };
-  
-  const prevImage = () => {
-    setCurrentImage((prevImage) => (prevImage - 2 + totalImage) % totalImage + 1);
-  };
-
+const Home: React.FC = () => {
   return (
-    <div className=" grid place-items-center min-h-screen relative">
-      <div className="relative  w-400 h-600">
-        <Image 
-          src={`/images/image${currentImage}.jpg`} 
-          alt={`Image $ {currentImage}`} 
-          layout="intrinsic"
-          objectFit="cover"
-          objectPosition="center center"
-          width={350}
-          height={550}
-        />
-      
+    <div className=" container">
+      <div className=" text-center mt-10">
+        <p className="text-2xl font-bold">
+          บริษัท นวัทนนท์ วิศวกรรม จำกัด
+        </p>
+        <p className="mt-2">
+          ยินดีต้อนรับ สอบถาม ปรึกษาปัญหา เกี่ยวกับระบบไฟฟ้าต่างๆ ได้ที่นี่
+        </p>
       </div>
-      <button 
-        onClick={prevImage} 
-        className="bg-gray-500 text-white p-2 rounded-full absolute left-4 top-1/2 transform -translate-y-1/2">
-        <FaChevronLeft size={20}/>
-      </button>
-      <button 
-        onClick={nextImage}
-        className="bg-gray-500 text-white p-2 rounded-full absolute right-4 top-1/2 transform -translate-y-1/2"
-      >
-        <FaChevronRight size={20}/>
-      </button>
-
-      
+      <div className="mt-8">
+        <Carousel />
+      </div>
     </div>
-  );
-};
+    
+  )
+}
+
+export default Home;
