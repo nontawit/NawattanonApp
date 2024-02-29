@@ -11,7 +11,9 @@ const Home: React.FC = () => {
         <p className="mt-2">
           บริการด้านไฟฟ้าในอาคารและนอกอาคาร
         </p>
-        <Carousel />
+        <div className="mt-8">
+          <Carousel />
+        </div>
       </div>
     
   )
