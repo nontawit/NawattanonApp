@@ -61,7 +61,7 @@ function Navbar() {
             {isMenuOpen && (
                 <div className=" md:hidden">
                     <div className=" bg-gray-900 p-4">
-                        <Link className=" block py-2 text-white hover:text-gray-300" href="/About"></Link>
+                        <Link className=" block py-2 text-white hover:text-gray-300" href="/About">เกี่ยวกับเรา</Link>
                         <Link className=" block py-2 text-white hover:text-gray-300" href="/Services">บริการของเรา</Link>
                         <Link className=" block py-2 text-white hover:text-gray-300" href="/Contact">ติดต่อเรา</Link>
                     </div>
