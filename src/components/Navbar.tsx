@@ -2,7 +2,7 @@
 import React, { Component, useState } from "react";
 import Link from "next/link";
 
-function Nav() {
+function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return(
@@ -51,9 +51,9 @@ function Nav() {
                         </button>
                     </div>
                     <div className=" hidden md:flex space-x-4">
-                        <Link className=" text-white hover:text-gray-300" href="/about">เกี่ยวกับเรา</Link>
-                        <Link className=" text-white hover:text-gray-300" href="/services">บริการของเรา</Link>
-                        <Link className=" text-white hover:text-gray-300" href="/contact">ติดต่อเรา</Link>
+                        <Link className=" text-white hover:text-gray-300" href="/About">เกี่ยวกับเรา</Link>
+                        <Link className=" text-white hover:text-gray-300" href="/Services">บริการของเรา</Link>
+                        <Link className=" text-white hover:text-gray-300" href="/Contact">ติดต่อเรา</Link>
                     </div>
                 </div>
             </div>
@@ -61,9 +61,9 @@ function Nav() {
             {isMenuOpen && (
                 <div className=" md:hidden">
                     <div className=" bg-gray-900 p-4">
-                        <Link className=" block py-2 text-white hover:text-gray-300" href="/about">เกี่ยวกับเรา</Link>
-                        <Link className=" block py-2 text-white hover:text-gray-300" href="/services">บริการของเรา</Link>
-                        <Link className=" block py-2 text-white hover:text-gray-300" href="/contact">ติดต่อเรา</Link>
+                        <Link className=" block py-2 text-white hover:text-gray-300" href="/About"></Link>
+                        <Link className=" block py-2 text-white hover:text-gray-300" href="/Services">บริการของเรา</Link>
+                        <Link className=" block py-2 text-white hover:text-gray-300" href="/Contact">ติดต่อเรา</Link>
                     </div>
                 </div>
             )}
@@ -71,4 +71,4 @@ function Nav() {
     );
 };
 
-export default Nav;
+export default Navbar;
