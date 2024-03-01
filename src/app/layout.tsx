@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       
       <body className={inter.className}>
-        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '50vh'}}>
             <Navbar/>
           <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             {children}
