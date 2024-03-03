@@ -2,8 +2,20 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-//import Navbar from "../components/nav";
+import localfont from 'next/font/local';
 import Navbar from "@/components/Navbar";
+
+const sukhumvit = localfont(
+  {
+    src: [
+      {
+        path: "../../public/fonts/sukhumvit.ttf",
+        weight: "normal",
+      },
+    ],
+    variable: "--font-sukhumvit",
+  }
+)
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,9 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      
-      <body className={inter.className}>
+    <html lang="en" className={`${sukhumvit.variable} font-sukhumvit`}>
+      <body className={`${sukhumvit.variable} font-sukhumvit`}>
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '50vh'}}>
             <Navbar/>
           <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
