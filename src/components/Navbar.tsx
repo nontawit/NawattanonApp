@@ -1,42 +1,66 @@
 "use client";
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // ปรับขนาดตามที่คุณต้องการ
+    };
+
+    handleResize(); // เช็คขนาดเมื่อโหลดหน้าเพจ
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <nav className="bg-white p-4 shadow-md font-sukhumvit">
-      <div className="container mx-auto flex  md:flex-row  md:items-start justify-between ">
-        <div className="flex items-center ">
-          <img src="logo.png" alt="Logo" className="max-w-16" />
-          <span className="text-lg font-semibold ml-2">Nawattanon</span>
+    <nav className="bg-white p-4 shadow-md">
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="flex items-center">
+
+          <Link href="/"><img src="/images/Logo.png" alt="Logo" className="max-w-16" /></Link>
+          <Link href="/"><span className="text-lg font-semibold ml-2">Nawattanon</span></Link>
         </div>
-        <div className="md:hidden ">
-          <button onClick={toggleMenu} className="focus:outline-none ">
-            {isMenuOpen ? (
-              <svg className="w-8 h-8 text-gray-700 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            ) : (
-              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-              </svg>
-            )}
-          </button>
-        </div>
+        {isMobile ? (
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="focus:outline-none">
+              {isMenuOpen ? (
+                <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              ) : (
+                <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+              )}
+            </button>
+          </div>
+        ) : (
+          <ul className="flex space-x-4">
+            <li><Link href="/About" className="text-gray-700 hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
+            <li><Link href="/Contact" className="text-gray-700 hover:text-gray-900 transition">ติดต่อ</Link></li>
+            <li><Link href="/Service" className="text-gray-700 hover:text-gray-900 transition">บริการ</Link></li>
+          </ul>
+        )}
       </div>
-      <ul className={`md:flex flex-col md:flex-row md:space-x-4 ${isMenuOpen ? 'flex' : 'hidden'} mt-2 md:mt-0 items-center`}>
-          <li><Link href="/" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 block p-2 transition">Home</Link></li>
-          <li><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)}  className="text-gray-700 hover:text-gray-900 block p-2 transition">About</Link></li>
-          <li><Link href="/host" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 block p-2 transition">Host</Link></li>
-          <li><Link href="/signup" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 block p-2 transition">Sign Up</Link></li>
-          <li><Link href="/login" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 block p-2 transition">Log In</Link></li>
+      {isMenuOpen && isMobile && (
+        <ul className="md:hidden">
+          <li className='flex items-center justify-center'><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Contact" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 transition">ติดต่อ</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Service" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 transition">บริการ</Link></li>
         </ul>
+      )}
     </nav>
   );
 };
