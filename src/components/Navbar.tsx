@@ -29,8 +29,8 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
 
-          <Link href="/"><img src="/images/Logo.png" alt="Logo" className="max-w-16" /></Link>
-          <Link href="/"><span className="text-lg font-semibold ml-2">Nawattanon</span></Link>
+          <Link href="/" onClick={() => setMenuOpen(!isMenuOpen)}><img src="/images/Logo.png" alt="Logo" className="max-w-16" /></Link>
+          <Link href="/" onClick={() => setMenuOpen(!isMenuOpen)}><span className="text-lg font-semibold ml-2">Nawattanon</span></Link>
         </div>
         {isMobile ? (
           <div className="md:hidden">
