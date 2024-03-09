@@ -10,6 +10,12 @@ const Navbar = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    if (isMenuOpen) {
+      setMenuOpen(!isMenuOpen);
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // ปรับขนาดตามที่คุณต้องการ
@@ -29,8 +35,13 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
 
-          <Link href="/" onClick={() => setMenuOpen(!isMenuOpen)}><img src="/images/Logo.png" alt="Logo" className="max-w-16" /></Link>
-          <Link href="/" onClick={() => setMenuOpen(!isMenuOpen)}><span className="text-lg font-semibold ml-2">Nawattanon</span></Link>
+          <Link href="/" onClick={closeMenu}><img src="/images/Logo.png" alt="Logo" className="max-w-16" /></Link>
+          <Link href="/" onClick={closeMenu} className='ml-2'>
+            <span className="text-lg font-semibold flex-col">
+              <p>Nawattanon</p>
+              <p>Engineering</p>
+            </span>
+          </Link>
         </div>
         {isMobile ? (
           <div className="md:hidden">
