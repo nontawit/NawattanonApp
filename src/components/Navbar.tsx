@@ -50,7 +50,7 @@ const Navbar = () => {
           <ul className="flex space-x-4">
             <li><Link href="/About" className="text-gray-700 hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
             <li><Link href="/Contact" className="text-gray-700 hover:text-gray-900 transition">ติดต่อ</Link></li>
-            <li><Link href="/Service" className="text-gray-700 hover:text-gray-900 transition">บริการ</Link></li>
+            <li><Link href="/Services" className="text-gray-700 hover:text-gray-900 transition">บริการ</Link></li>
           </ul>
         )}
       </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
         <ul className="md:hidden">
           <li className='flex items-center justify-center'><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
           <li className='flex items-center justify-center'><Link href="/Contact" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">ติดต่อ</Link></li>
-          <li className='flex items-center justify-center'><Link href="/Service" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">บริการ</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Services" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">บริการ</Link></li>
         </ul>
       )}
     </nav>
