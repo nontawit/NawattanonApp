@@ -56,9 +56,9 @@ const Navbar = () => {
       </div>
       {isMenuOpen && isMobile && (
         <ul className="md:hidden">
-          <li className='flex items-center justify-center'><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
-          <li className='flex items-center justify-center'><Link href="/Contact" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 transition">ติดต่อ</Link></li>
-          <li className='flex items-center justify-center'><Link href="/Service" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 hover:text-gray-900 transition">บริการ</Link></li>
+          <li className='flex items-center justify-center'><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Contact" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">ติดต่อ</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Service" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">บริการ</Link></li>
         </ul>
       )}
     </nav>
