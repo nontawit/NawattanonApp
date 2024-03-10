@@ -31,13 +31,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white p-4 shadow-md">
+    <nav className="  bg-white p-1 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
 
           <Link href="/" onClick={closeMenu}><img src="/images/Logo.png" alt="Logo" className="max-w-16" /></Link>
-          <Link href="/" onClick={closeMenu} className='ml-2'>
-            <span className="text-lg font-semibold flex-col">
+          <Link href="/" onClick={closeMenu} className='ml-5'>
+            <span className=" text-xl font-semibold flex-col">
               <p>Nawattanon</p>
               <p>Engineering</p>
             </span>
@@ -59,17 +59,17 @@ const Navbar = () => {
           </div>
         ) : (
           <ul className="flex space-x-4">
-            <li><Link href="/About" className="text-gray-700 hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
-            <li><Link href="/Contact" className="text-gray-700 hover:text-gray-900 transition">ติดต่อ</Link></li>
-            <li><Link href="/Services" className="text-gray-700 hover:text-gray-900 transition">บริการ</Link></li>
+            <li className=' pr-5'><Link href="/About" className="text-lg text-gray-600 hover:text-gray-900  transition">เกี่ยวกับเรา</Link></li>
+            <li className=' pr-5'><Link href="/Contact" className="text-lg text-gray-600 hover:text-gray-900 transition">ติดต่อ</Link></li>
+            <li className=' pr-5'><Link href="/Services" className="text-lg text-gray-600 hover:text-gray-900 transition">บริการ</Link></li>
           </ul>
         )}
       </div>
       {isMenuOpen && isMobile && (
         <ul className="md:hidden">
-          <li className='flex items-center justify-center'><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
-          <li className='flex items-center justify-center'><Link href="/Contact" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">ติดต่อ</Link></li>
-          <li className='flex items-center justify-center'><Link href="/Services" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-700 text-lg hover:text-gray-900 transition">บริการ</Link></li>
+          <li className=' flex items-center justify-center'><Link href="/About" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-600 text-lg hover:text-gray-900 transition">เกี่ยวกับเรา</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Contact" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-600 text-lg hover:text-gray-900 transition">ติดต่อ</Link></li>
+          <li className='flex items-center justify-center'><Link href="/Services" onClick={() => setMenuOpen(!isMenuOpen)} className="text-gray-600 text-lg hover:text-gray-900 transition">บริการ</Link></li>
         </ul>
       )}
     </nav>
