@@ -4,7 +4,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className=" mt-5">
+    <div className=" mt-10">
       <p className="text-2xl font-bold text-center">
         เกี่ยวกับเรา
       </p>
